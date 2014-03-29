@@ -1407,8 +1407,8 @@ function dsq_sso_login() {
           name: "'.wp_specialchars_decode($sitename, ENT_QUOTES).'",
           button: "'.$button.'",
           icon: "'.$icon.'",
-          url: "'.$siteurl.'/wp-login.php",
-          logout: "'.$siteurl.'/wp-login.php?action=logout",
+          url: "http://www.scrybo.com/users/login/",
+          logout: "http://www.scrybo.com/users/logout/",
           width: "800",
           height: "700"
     }';
