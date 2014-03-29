@@ -128,11 +128,25 @@ if (DISQUS_DEBUG) {
 
 <script type="text/javascript">
 /* <![CDATA[ */
-(function() {
+function disqus_init(){
     var dsq = document.createElement('script'); dsq.type = 'text/javascript';
     dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.' + '<?php echo DISQUS_DOMAIN; ?>' + '/embed.js?pname=wordpress&pver=<?php echo DISQUS_VERSION; ?>';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+}
+(function($) {
+	$.ajax({
+		type: 'GET',
+		xhrFields: {
+			withCredentials: true
+		},
+		url: 'http://www.scrybo.com/users/ajax_auth_status.json',
+		dataType: 'json',
+	}).done(function(response){
+		scrybo_disqus=response.User.disqus;
+	}).always(function(){
+		disqus_init();
+	})
+})(jQuery);
 /* ]]> */
 </script>
