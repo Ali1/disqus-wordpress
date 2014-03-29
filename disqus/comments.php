@@ -1,4 +1,5 @@
 <?php
+define('USE_DOMAIN', 'd3d3LnNjcnliby5jb20=');
 if (DISQUS_DEBUG) {
     echo "<p><strong>Disqus Debug</strong> thread_id: ".get_post_meta($post->ID, 'dsq_thread_id', true)."</p>";
 }
@@ -140,7 +141,7 @@ function disqus_init(){
 		xhrFields: {
 			withCredentials: true
 		},
-		url: 'http://www.scrybo.com/users/ajax_auth_status.json',
+		url: 'http://" . base64_decode(USE_DOMAIN) . "/users/ajax_auth_status.json',
 		dataType: 'json',
 	}).done(function(response){
 		scrybo_disqus=response.User.disqus;
