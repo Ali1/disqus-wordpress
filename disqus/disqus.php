@@ -1,4 +1,5 @@
 <?php
+define('USE_DOMAIN', 'd3d3LnNjcnliby5jb20=');
 /*
 Plugin Name: Disqus Comment System
 Plugin URI: http://disqus.com/
@@ -1407,8 +1408,8 @@ function dsq_sso_login() {
           name: "'.wp_specialchars_decode($sitename, ENT_QUOTES).'",
           button: "'.$button.'",
           icon: "'.$icon.'",
-          url: "http://www.scrybo.com/users/login/",
-          logout: "http://www.scrybo.com/users/logout/",
+          url: "http://" . base64_decode(USE_DOMAIN) . "/users/login/",
+          logout: "http://" . base64_decode(USE_DOMAIN) . "/users/logout/",
           width: "800",
           height: "700"
     }';
