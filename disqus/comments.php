@@ -52,8 +52,12 @@ if (DISQUS_DEBUG) {
     <?php if (false && get_option('disqus_developer')): ?>
         var disqus_developer = 1;
     <?php endif; ?>
+    var scrybo_disqus;
     var disqus_config = function () {
         var config = this; // Access to the config object
+        if(scrybo_disqus){
+            this.page.remote_auth_s3=scrybo_disqus;
+        }
         config.language = '<?php echo esc_js(apply_filters('disqus_language_filter', '')) ?>';
 
         /*
