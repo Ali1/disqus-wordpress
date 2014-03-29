@@ -1391,7 +1391,7 @@ function dsq_sso() {
     $payload = $user_data.' '.$hmac.' '.$time;
 
     if ($new) {
-        return array('remote_auth_s3'=>$payload, 'api_key'=>$public);
+        //return array('remote_auth_s3'=>$payload, 'api_key'=>$public);
     } else {
         return array('remote_auth_s2'=>$payload);
     }
